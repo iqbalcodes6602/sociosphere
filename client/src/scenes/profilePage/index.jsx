@@ -40,9 +40,9 @@ const ProfilePage = () => {
         justifyContent="center"
       >
         <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
-          <UserWidget userId={userId} picturePath={user.picturePath} />
-          <Box m="2rem 0" />
           <FriendListWidget userId={userId} />
+          <Box m="2rem 0" />
+          <UserWidget userId={userId} picturePath={user.picturePath} />
         </Box>
         <Box
           flexBasis={isNonMobileScreens ? "42%" : undefined}
