@@ -51,8 +51,14 @@ const MyPostWidget = ({ picturePath }) => {
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
     });
-    const posts = await response.json();
-    dispatch(setPosts({ posts }));
+    const data = await response.json();
+
+    const sortedPosts = data.sort((a, b) => {
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    });
+
+    dispatch(setPosts({ posts: sortedPosts }));
+    // dispatch(setPosts({ posts }));
     setImage(null);
     setPost("");
   };
