@@ -26,6 +26,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
       `${process.env.REACT_APP_BACKEND_URL}/users/${_id}/${friendId}`,
       {
         method: "PATCH",
+        mode: "no-cors",
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",

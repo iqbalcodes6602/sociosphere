@@ -16,6 +16,7 @@ const FriendListWidget = ({ userId }) => {
       `${process.env.REACT_APP_BACKEND_URL}/users/${userId}/friends`,
       {
         method: "GET",
+        mode: "no-cors",
         headers: { Authorization: `Bearer ${token}` },
       }
     );

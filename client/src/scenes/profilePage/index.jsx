@@ -17,6 +17,7 @@ const ProfilePage = () => {
   const getUser = async () => {
     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/users/${userId}`, {
       method: "GET",
+      mode: "no-cors",
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await response.json();

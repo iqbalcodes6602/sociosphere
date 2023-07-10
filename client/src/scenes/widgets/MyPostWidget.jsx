@@ -48,6 +48,7 @@ const MyPostWidget = ({ picturePath }) => {
 
     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/posts`, {
       method: "POST",
+      mode: "no-cors",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
     });

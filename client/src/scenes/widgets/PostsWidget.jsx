@@ -11,6 +11,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   const getPosts = async () => {
     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/posts`, {
       method: "GET",
+      mode: "no-cors",
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await response.json();
@@ -28,6 +29,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
       `${process.env.REACT_APP_BACKEND_URL}/posts/${userId}/posts`,
       {
         method: "GET",
+        mode: "no-cors",
         headers: { Authorization: `Bearer ${token}` },
       }
     );

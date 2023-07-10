@@ -62,12 +62,11 @@ const Form = () => {
       formData.append(value, values[value]);
     }
     formData.append("picturePath", values.picture.name);
-    // alert(`${process.env.REACT_APP_BACKEND_URL}/auth/login`)
-    // "http://localhost:3001/auth/register",
     const savedUserResponse = await fetch(
       `${process.env.REACT_APP_BACKEND_URL}/auth/register`,
       {
         method: "POST",
+        mode: "no-cors",
         body: formData,
       }
     );
@@ -80,12 +79,11 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    // alert(`${process.env.REACT_APP_BACKEND_URL}/auth/login`)
-    // "http://localhost:3001/auth/login",
     const loggedInResponse = await fetch(
       `${process.env.REACT_APP_BACKEND_URL}/auth/login`,
       {
         method: "POST",
+        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
